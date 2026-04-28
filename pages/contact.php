@@ -60,32 +60,33 @@
                     </div>
 
                     <div class="contact-form-minimal fade-in-right">
-                        <form id="contactForm" class="minimal-form">
+                        <form id="contactForm" class="minimal-form" action="../includes/process-enquiry.php" method="POST">
                             <div class="form-row">
                                 <div class="form-group">
-                                    <input type="text" placeholder="Your Name" required>
+                                    <input type="text" name="name" placeholder="Your Name" required>
                                 </div>
                                 <div class="form-group">
-                                    <input type="email" placeholder="Your Email" required>
+                                    <input type="email" name="email" placeholder="Your Email" required>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <input type="tel" placeholder="Phone Number" required>
+                                <input type="tel" name="phone" placeholder="Phone Number" required>
                             </div>
                             <div class="form-group">
-                                <select required>
+                                <select name="subject" required>
                                     <option value="" disabled selected>Interested In</option>
-                                    <option value="buying">Buying Luxury Villa</option>
-                                    <option value="selling">Selling Premium Property</option>
-                                    <option value="legal">Legal Association</option>
+                                    <option value="Buying Luxury Villa">Buying Luxury Villa</option>
+                                    <option value="Selling Premium Property">Selling Premium Property</option>
+                                    <option value="Legal Association">Legal Association</option>
                                 </select>
                             </div>
                             <div class="form-group">
-                                <textarea rows="5" placeholder="Tell us about your requirements..." required></textarea>
+                                <textarea name="message" rows="5" placeholder="Tell us about your requirements..." required></textarea>
                             </div>
                             <button type="submit" class="agency-btn">
                                 Send Message <i class="fas fa-arrow-right"></i>
                             </button>
+                            <div id="formResponse" style="margin-top: 1.5rem; display: none;"></div>
                         </form>
                     </div>
                 </div>

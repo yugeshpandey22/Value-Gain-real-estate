@@ -142,32 +142,33 @@
                     </div>
 
                     <div class="contact-card-form">
-                        <form id="contactForm" class="modern-form">
+                        <form id="contactForm" class="modern-form" action="includes/process-enquiry.php" method="POST">
                             <div class="form-group">
                                 <label>Name</label>
-                                <input type="text" id="name" required>
+                                <input type="text" name="name" required>
                             </div>
                             <div class="form-group">
                                 <label>Email</label>
-                                <input type="email" id="email" required>
+                                <input type="email" name="email" required>
                             </div>
                             <div class="form-group">
                                 <label>Phone</label>
-                                <input type="tel" id="phone" required>
+                                <input type="tel" name="phone" required>
                             </div>
                             <div class="form-group">
                                 <label>Interested In</label>
-                                <select id="interest" required>
-                                    <option value="buying">Buying</option>
-                                    <option value="selling">Selling</option>
-                                    <option value="renting">Renting</option>
+                                <select name="subject" required>
+                                    <option value="Buying Luxury Villa">Buying</option>
+                                    <option value="Selling Premium Property">Selling</option>
+                                    <option value="Renting Property">Renting</option>
                                 </select>
                             </div>
                             <div class="form-group">
                                 <label>Message</label>
-                                <textarea id="message" rows="2" required></textarea>
+                                <textarea name="message" rows="2" required></textarea>
                             </div>
                             <button type="submit" class="btn-submit-light">Submit</button>
+                            <div id="formResponse" style="margin-top: 1rem; display: none; color: var(--primary);"></div>
                         </form>
                     </div>
                 </div>

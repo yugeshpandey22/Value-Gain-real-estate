@@ -62,24 +62,34 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(el);
     });
 
-    // Form Submission Animation
+    // Form Submission Handling
     const contactForm = document.getElementById('contactForm');
     if (contactForm) {
         contactForm.addEventListener('submit', (e) => {
             e.preventDefault();
             const btn = contactForm.querySelector('button');
-            const originalText = btn.innerText;
+            const originalText = btn.innerHTML;
+            const responseDiv = document.getElementById('formResponse');
+            const formData = new FormData(contactForm);
 
             btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
-            btn.style.opacity = '0.8';
             btn.disabled = true;
 
-            // Simulate API call
-            setTimeout(() => {
-                btn.innerHTML = '<i class="fas fa-check"></i> Message Sent!';
+            fetch(contactForm.action, {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.text())
+            .then(data => {
+                btn.innerHTML = '<i class="fas fa-check"></i> Sent!';
                 btn.style.backgroundColor = '#2ecc71';
                 btn.style.color = '#fff';
-                btn.style.borderColor = '#2ecc71';
+
+                if (responseDiv) {
+                    responseDiv.innerHTML = data;
+                    responseDiv.style.display = 'block';
+                    responseDiv.style.color = '#2ecc71';
+                }
 
                 contactForm.reset();
 
@@ -87,11 +97,15 @@ document.addEventListener('DOMContentLoaded', () => {
                     btn.innerHTML = originalText;
                     btn.style.backgroundColor = '';
                     btn.style.color = '';
-                    btn.style.borderColor = '';
-                    btn.style.opacity = '1';
                     btn.disabled = false;
-                }, 3000);
-            }, 1500);
+                    if (responseDiv) responseDiv.style.display = 'none';
+                }, 5000);
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                btn.innerHTML = 'Error!';
+                btn.disabled = false;
+            });
         });
     }
 
