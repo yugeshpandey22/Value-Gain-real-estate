@@ -17,7 +17,16 @@
     <header class="page-header">
         <div class="bg-image-animated" style="background-image: url('../assets/images/hero.png');"></div>
         <div class="overlay"></div>
-        <h1 class="reveal-up">About Us</h1>
+        <div class="dot-pattern"></div>
+        <div class="header-frame-container fade-in-up">
+            <div class="agency-frame-wrapper" style="padding: 1rem 3rem; display: inline-block; background: rgba(0,0,0,0.3);">
+                <div class="corner-square top-left"></div>
+                <div class="corner-square top-right"></div>
+                <div class="corner-square bottom-left"></div>
+                <div class="corner-square bottom-right"></div>
+                <h1 class="reveal-up" style="margin: 0; font-size: clamp(1.5rem, 3.5vw, 2.2rem); letter-spacing: 4px; font-weight: 700;">ABOUT US</h1>
+            </div>
+        </div>
     </header>
 
     <!-- About Section -->

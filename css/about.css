@@ -1,10 +1,9 @@
 .page-header {
-    height: 50vh;
+    height: 60vh;
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
-    margin-bottom: 3rem;
     overflow: hidden;
 }
 .page-header .overlay {
@@ -13,14 +12,22 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(15, 17, 21, 0.7);
+    background: rgba(15, 17, 21, 0.6);
     z-index: 1;
 }
-.page-header h1 {
+.header-frame-container {
     position: relative;
-    z-index: 2;
-    color: var(--primary);
-    font-size: 4rem;
+    z-index: 5;
+    text-align: center;
+}
+.page-header .agency-frame-wrapper {
+    border: 1px solid rgba(255, 77, 77, 0.4);
+    background: rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(5px);
+}
+.page-header h1 {
+    color: #fff;
+    text-transform: uppercase;
 }
 .nav-links .active {
     color: var(--primary);

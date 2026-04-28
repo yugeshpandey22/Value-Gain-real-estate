@@ -17,7 +17,17 @@
     <header class="page-header">
         <div class="bg-image-animated" style="background-image: url('../assets/images/project2.png');"></div>
         <div class="overlay"></div>
-        <h1 class="reveal-up">Contact Us</h1>
+        <div class="dot-pattern"></div>
+        
+        <div class="header-frame-container fade-in-up">
+            <div class="agency-frame-wrapper" style="padding: 0.8rem 2.5rem; display: inline-block;">
+                <div class="corner-square top-left"></div>
+                <div class="corner-square top-right"></div>
+                <div class="corner-square bottom-left"></div>
+                <div class="corner-square bottom-right"></div>
+                <h1 class="reveal-up" style="margin: 0; font-size: clamp(1.8rem, 4vw, 2.8rem); letter-spacing: 2px;">Contact Us</h1>
+            </div>
+        </div>
     </header>
 
     <!-- Agency Style Contact Section -->
