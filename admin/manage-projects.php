@@ -72,8 +72,14 @@ if (isset($_GET['edit'])) {
     <?php include '../includes/admin-sidebar.php'; ?>
 
     <main class="admin-main">
-        <div class="header-top">
-            <h1>Manage Projects</h1>
+        <div class="header-top" style="margin-bottom: 3rem;">
+            <div class="agency-frame-wrapper" style="padding: 0.8rem 2rem; display: inline-block; border: 1px solid rgba(203, 161, 83, 0.3);">
+                <div class="corner-square top-left"></div>
+                <div class="corner-square top-right"></div>
+                <div class="corner-square bottom-left"></div>
+                <div class="corner-square bottom-right"></div>
+                <h1 style="margin: 0; font-size: 1.5rem; letter-spacing: 2px;">MANAGE PROJECTS</h1>
+            </div>
             <?php if($msg): ?>
                 <div class="alert"><?php echo $msg; ?></div>
             <?php endif; ?>
